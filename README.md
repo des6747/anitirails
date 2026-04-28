@@ -1,17 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the rails 8 App created using Antigravity.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 3.2
 
-* System dependencies
+* Rails version 8.0.4
 
-* Configuration
-
-* Database creation
+* Database Sqlite3
 
 * Database initialization
 

@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="h2">Movies</h1>
+  <%= link_to "New movie", new_movie_path, class: "btn btn-primary shadow-sm" %>
+</div>
+
+<div id="movies" class="row row-cols-1 row-cols-md-2 g-4">
+  <% @movies.each do |movie| %>
+    <div class="col">
+      <div class="h-100 d-flex flex-column">
+        <%= render movie %>
+        <div class="mt-auto pb-3">
+          <%= link_to "Show this movie", movie, class: "btn btn-sm btn-outline-secondary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="mb-4">
+      <h1 class="h3">Editing movie</h1>
+    </div>
+
+    <%= render "form", movie: @movie %>
+
+    <div class="mt-3">
+      <%= link_to "Show", @movie, class: "btn btn-outline-primary shadow-sm" %> |
+      <%= link_to "Back to movies", movies_path, class: "btn btn-outline-secondary shadow-sm" %>
+    </div>
+  </div>
+</div>

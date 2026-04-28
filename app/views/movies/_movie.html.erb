@@ -1,0 +1,20 @@
+<div id="<%= dom_id movie %>" class="card shadow-sm mb-3">
+  <% if movie.poster.attached? %>
+    <%= image_tag movie.poster, class: "card-img-top", style: "max-height: 400px; object-fit: cover;" %>
+  <% end %>
+  <div class="card-body">
+    <h4 class="card-title fw-bold"><%= movie.title %></h4>
+    <h6 class="card-subtitle mb-3 text-muted"><%= movie.genera %></h6>
+    
+    <ul class="list-group list-group-flush mb-3">
+      <li class="list-group-item px-0"><strong>Director:</strong> <%= movie.director %></li>
+      <li class="list-group-item px-0"><strong>Cast:</strong> <%= movie.cast %></li>
+      <li class="list-group-item px-0"><strong>Music Director:</strong> <%= movie.music_director %></li>
+    </ul>
+    
+    <div>
+      <strong>Description:</strong>
+      <p class="mt-2"><%= movie.description %></p>
+    </div>
+  </div>
+</div>

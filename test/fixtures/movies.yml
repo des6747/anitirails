@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  director: MyString
+  cast: MyText
+  music_director: MyString
+  genera: MyString
+  description: MyText
+
+two:
+  title: MyString
+  director: MyString
+  cast: MyText
+  music_director: MyString
+  genera: MyString
+  description: MyText

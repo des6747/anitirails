@@ -1,0 +1,51 @@
+<%= form_with(model: movie, class: "card p-4 shadow-sm") do |form| %>
+  <% if movie.errors.any? %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading"><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h4>
+      <ul class="mb-0">
+        <% movie.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label fw-bold" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :director, class: "form-label fw-bold" %>
+    <%= form.text_field :director, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :cast, class: "form-label fw-bold" %>
+    <%= form.text_area :cast, rows: 3, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :music_director, class: "form-label fw-bold" %>
+    <%= form.text_field :music_director, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :genera, "Genre", class: "form-label fw-bold" %>
+    <%= form.text_field :genera, class: "form-control" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :description, class: "form-label fw-bold" %>
+    <%= form.text_area :description, rows: 4, class: "form-control" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :poster, class: "form-label fw-bold" %>
+    <%= form.file_field :poster, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "btn btn-primary w-100" %>
+  </div>
+<% end %>

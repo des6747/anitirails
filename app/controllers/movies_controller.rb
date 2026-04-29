@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
+  allow_unauthenticated_access only: %i[ index show ]
   before_action :set_movie, only: %i[ show edit update destroy ]
+  before_action :require_admin, except: %i[ index show ]
 
   # GET /movies or /movies.json
   def index
@@ -66,5 +68,11 @@ class MoviesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def movie_params
       params.expect(movie: [ :title, :director, :cast, :music_director, :genera, :description, :poster ])
+    end
+
+    def require_admin
+      unless Current.user&.admin?
+        redirect_to movies_path, alert: "You are not authorized to perform this action."
+      end
     end
 end

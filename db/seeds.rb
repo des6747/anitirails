@@ -7,3 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Seeding default admin user..."
+User.find_or_create_by!(email_address: "admin@example.com") do |user|
+  user.password = "password"
+  user.admin = true
+end
+puts "Admin user seeded: admin@example.com / password"

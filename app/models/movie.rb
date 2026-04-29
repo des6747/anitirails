@@ -1,4 +1,4 @@
 class Movie < ApplicationRecord
   has_one_attached :poster
-  validates :title, presence: true
+  validates :title, :director, :music_director, :cast, :genera, presence: true
 end
